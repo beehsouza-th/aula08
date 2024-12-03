@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Registrar() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
+
+  const navigation = useNavigate ();
 
   const registrar = async (event) => {
     event.preventDefault();
@@ -16,11 +19,17 @@ export default function Registrar() {
           email: email, 
         }),
       });
+
+      if (res.ok){
+        navigation("/");
+      }
+      
+
     } catch (error) {
       alert("Ocorreu um erro na aplicação");
     }
   };
-
+//onchenge dispara um ação
   return (
     <main>
       <form onSubmit={registrar}>
