@@ -15,12 +15,12 @@ export default function Home() {
       }
     }
     buscarUsuario();
-  }, [usuarios]);
+  }, []);
 
  // id como parâmetro
   const deletar = async (id) => {
     try{
-       await fetch ('http:localhost:3000/usuarios/' + id, {
+       await fetch ('http:localhost:3000/usuarios/' + id , {
         method: 'DELETE',
        });
     }catch{
@@ -39,7 +39,7 @@ export default function Home() {
         <tr key={usuario.id}>
           <td>{usuario.nome}</td>
           <td>{usuario.email}</td>
-          <td> <button onClick={() => deletar(usuarios.id)} > deletar</button></td>
+          <td> <button onClick={() => deletar(usuario.id)} > deletar </button></td>
         </tr>
         
       )}
