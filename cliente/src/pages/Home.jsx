@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
-import  {Button} from "@mui/material";
-import AdfScannerIcon from '@mui/icons-material/AdfScanner';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import Button from '@mui/material/Button';
+import styles from '../styles/home.module.css';
+import Header from "../components/Header";
+
 
 export default function Home() {
 
@@ -22,7 +26,7 @@ export default function Home() {
   }, [usuarios]);
 
  // id como parâmetr
-  const deletar = async (id) => {
+  const deletar = async (id,) => {
     try{
        await fetch ('http://localhost:3000/usuarios/' + id , {
         method: 'DELETE',
@@ -50,23 +54,38 @@ export default function Home() {
   }
 
   return (
-    <div>
-      <Button variant = "contained" onClick={() => exportarPDF()}><AdfScannerIcon/> Gerar PDF</Button>
-    <table>
+    <>
+    <Header/>
+
+   <div className={styles.menu}>
+     <Button variant="outlined" onClick={() => exportarPDF()}><PictureAsPdfIcon/>Gerar PDF</Button>
+
+    </div>
+      
+
+    <div className={styles.bloco}>
+      <div className={styles.blocao}>
+      
+
+    <table className= {styles.table}>
       <tr>
-        <td>Nome</td>
-        <td>E-mail</td>
+        <th>Nome</th>
+        <th>E-mail</th> 
+        <th>Ações</th>
       </tr>
+
       {usuarios.map((usuario) =>
         <tr key={usuario.id}>
           <td>{usuario.nome}</td>
           <td>{usuario.email}</td>
-          <td> <button onClick={() => deletar(usuario.id)} > deletar </button></td>
+          <td> <button onClick={() => deletar(usuario.id)} className= {styles.deletar}><DeleteForeverIcon/></button>
+          </td>
         </tr>
         
       )}
     </table>
     </div>
-    
+    </div>
+    </>
   );
 }

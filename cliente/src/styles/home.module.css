@@ -1,0 +1,46 @@
+.table{
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+th{
+    background-color:#071e5f;
+    color: rgb(234, 234, 234);
+    padding: 12px;
+    text-align: left;
+    font-size: 17px;
+    border-bottom: 2px solid #432187;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #8188ba; 
+    font-size: 14px;
+    color:#333,
+}
+
+tr{
+    background-color: #29357c3c;
+}
+
+.deletar{
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu{
+    background-color: #343c77;
+    width: 100%;
+    height: 10%;
+
+}
