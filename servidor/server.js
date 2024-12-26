@@ -15,6 +15,7 @@ let discos = [
         preco: 250.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
+        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
     },
     {
         id: 2,
@@ -25,6 +26,7 @@ let discos = [
         preco: 300.00,
         formato: 'LP',
         disponibilidade: 'Em Estoque',
+        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
     },
     {
         id: 3,
@@ -35,11 +37,145 @@ let discos = [
         preco: 180.00,
         formato: 'LP',
         disponibilidade: 'Esgotado',
+        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 4,
+        titulo: "Led Zeppelin IV",
+        artista: "Led Zeppelin",
+        edicao: "Edição Limitada",
+        ano: 1971,
+        preco: 350.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 5,
+        titulo: "The Wall",
+        artista: "Pink Floyd",
+        edicao: "Edição Remasterizada",
+        ano: 1979,
+        preco: 220.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 6,
+        titulo: "Hotel California",
+        artista: "Eagles",
+        edicao: "Edição Especial",
+        ano: 1976,
+        preco: 280.00,
+        formato: "LP",
+        disponibilidade: "Esgotado",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 7,
+        titulo: "Back in Black",
+        artista: "AC/DC",
+        edicao: "Edição Limitada",
+        ano: 1980,
+        preco: 200.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 8,
+        titulo: "Born to Run",
+        artista: "Bruce Springsteen",
+        edicao: "Versão Original",
+        ano: 1975,
+        preco: 190.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 9,
+        titulo: "Thriller",
+        artista: "Michael Jackson",
+        edicao: "Edição Remasterizada",
+        ano: 1982,
+        preco: 330.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 10,
+        titulo: "Rumours",
+        artista: "Fleetwood Mac",
+        edicao: "Edição de Aniversário",
+        ano: 1977,
+        preco: 270.00,
+        formato: "LP",
+        disponibilidade: "Esgotado",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 11,
+        titulo: "The Beatles",
+        artista: "The Beatles",
+        edicao: "Box Set",
+        ano: 1968,
+        preco: 500.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 12,
+        titulo: "Let It Be",
+        artista: "The Beatles",
+        edicao: "Reedição",
+        ano: 1970,
+        preco: 150.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        
+    },
+    {
+        id: 13,
+        titulo: "Purple Rain",
+        artista: "Prince",
+        edicao: "Edição Especial",
+        ano: 1984,
+        preco: 260.00,
+        formato: "LP",
+        disponibilidade: "Esgotado",
+        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 14,
+        titulo: "The Dark Knight",
+        artista: "Hans Zimmer",
+        edicao: "Trilha Sonora Oficial",
+        ano: 2008,
+        preco: 150.00,
+        formato: "Vinil",
+        disponibilidade: "Em Estoque",
+        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+    },
+    {
+        id: 15,
+        titulo: "What's Going On",
+        artista: "Marvin Gaye",
+        edicao: "Edição de Colecionador",
+        ano: 1971,
+        preco: 230.00,
+        formato: "LP",
+        disponibilidade: "Em Estoque",
+        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
     }
 ];
 
 app.post('/discos', (req, res) => {
-    const { titulo, artista, edicao, ano, preco, formato, disponibilidade } = req.body;
+    const { titulo, artista, edicao, ano, preco, formato, disponibilidade, image } = req.body;
 
     console.log('Dados recebidos:', req.body);
 
@@ -53,6 +189,7 @@ app.post('/discos', (req, res) => {
         preco,
         formato,
         disponibilidade,
+        image
     };
 
     discos.push(novoDisco);

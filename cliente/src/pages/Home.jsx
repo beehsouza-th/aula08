@@ -29,7 +29,7 @@ export default function Home() {
         method: 'DELETE',
       });
 
-      setProdutos(produtos.filter(produto => produto.id !== id));
+      setProdutos(produtos.filter(produto => produto.id !== id)); //filtrando p/ que possa ser excluido conforme o id
     } catch {
       alert("Ish lascou!!");
     }
@@ -57,48 +57,38 @@ export default function Home() {
     doc.save("ProdutosVinil.pdf");
   };
 
-  return (
-    <>
-      <Header />
-      <div className={styles.menu}>
-        <Button variant="outlined" onClick={() => exportarPDF()}><PictureAsPdfIcon /> Gerar PDF
-        </Button>
-      </div>
 
-      <div className={styles.bloco}>
-        <div className={styles.blocao}>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <th>Título</th>
-                <th>Artista/Banda</th>
-                <th>Edição</th>
-                <th>Ano</th>
-                <th>Preço</th>
-                <th>Disponibilidade</th>
-                <th>Imagem</th>
-              </tr>
-            </thead>
-            <tbody>
-              {produtos.map((produto) => (
-                <tr key={produto.id}>
-                  <td>{produto.titulo}</td>
-                  <td>{produto.artista}</td>
-                  <td>{produto.edicao}</td>
-                  <td>{produto.ano}</td>
-                  <td>{produto.preco}</td>
-                  <td>{produto.disponibilidade}</td>
-                  <td><img src={produto.image} alt={produto.titulo} width={100} /></td>
-                  <td>
-                    <button onClick={() => deletar(produto.id)} className={styles.deletar}><DeleteForeverIcon />
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+
+return(
+  <>
+  <Header />
+
+  <div className={styles.menu}>
+    <Button variant="outlined" onClick={() => exportarPDF()}><PictureAsPdfIcon /> Gerar PDF
+    </Button>
+  </div>
+
+  <div className={styles.bloco}>
+    <div className={styles.blocao}>
+      
+      <div className={styles.produtos}>
+        {produtos.map((produto) => (
+          <div key={produto.id}>
+              <h3>{produto.titulo}</h3>
+              <p>Artista: {produto.artista}</p>
+              <p>Edição: {produto.edicao}</p>
+              <p>Ano: {produto.ano}</p>
+              <p>Preço: R${produto.preco}</p>
+              <p>Disponibilidade: {produto.disponibilidade}</p>
+              <img src={produto.image} alt={produto.title} className={styles.prudutosimg} width={100}/>
+              <button onClick={() => deletar(produto.id)} className={styles.deletar}><DeleteForeverIcon />
+                Remover
+              </button>
+            </div>
+        ))}
       </div>
-    </>
-  );
+    </div>
+  </div>
+</>
+);
 }

@@ -10,47 +10,38 @@ export default function Registrar() {
   const [formato, setFormato] = useState("");
   const [disponibilidade, setDisponibilidade] = useState("");
 
+
   const navigation = useNavigate();
 
   const registrar = async (event) => {
     event.preventDefault();
-
-    
-    if (!titulo || !artista || !edicao || !ano || !preco || !formato || !disponibilidade) {
-      return alert("Por favor, preencha todos os campos.");
-    }
-
-    const produto = {
-      produto: titulo,
-      produtos: artista,
-      produtos: edicao,
-      produtos: ano,
-      produtos: preco,
-      produtos: formato,
-      produtos: disponibilidade,
-    };
-
-    console.log("Dados do Produto:", produto);
-
     try {
-      const res = await fetch("http://localhost:3000/discos/", {
-        method: "POST", // Enviando
+      
+      const res = await fetch("http://localhost:3000/discos", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json", 
         },
-        body: JSON.stringify(produto),
+        body: JSON.stringify({
+          titulo: titulo,
+          artista: artista,
+          edicao: edicao,
+          ano: ano,
+          preco:preco,
+          formato:formato,
+          disponibilidade : disponibilidade,
+        }),
       });
 
+
       if (res.ok) {
-        const responseData = await res.json();
-        console.log("Produto registrado com sucesso:", responseData);
         navigation("/");  
-        const errorData = await res.json();
-        alert(`Erro ao registrar: ${errorData.erro || 'Erro desconhecido'}`);
+      } else {
+        alert("Erro ao registrar produto.");
       }
     } catch (error) {
       console.error("Erro na requisição:", error);
-      alert("Ocorreu um erro na aplicação");
+      alert("Ocorreu um erro na aplicação.");
     }
   };
 
@@ -85,7 +76,7 @@ export default function Registrar() {
 
           <label>Ano</label>
           <input
-            type="number"
+            type="text"
             value={ano}
             onChange={(event) => setAno(event.target.value)}
             required
@@ -93,7 +84,7 @@ export default function Registrar() {
 
           <label>Preço</label>
           <input
-            type="number" 
+            type="text" 
             value={preco}
             onChange={(event) => setPreco(event.target.value)}
             required
@@ -116,7 +107,7 @@ export default function Registrar() {
           />
         </div>
 
-        <button type="submit">Registrar Produto</button>
+        <button>Registrar Produto</button>
       </form>
     </main>
   );

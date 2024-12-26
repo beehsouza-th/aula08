@@ -1,4 +1,3 @@
-
 import styles from './listaProdutos.module.css';
 
 export default function ListaProdutos({ produtos }) {
