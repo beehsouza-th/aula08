@@ -7,85 +7,98 @@ import Button from '@mui/material/Button';
 import styles from '../styles/home.module.css';
 import Header from "../components/Header";
 
-
 export default function Home() {
-
-  const [usuarios, setUsuarios] = useState([]);
+  const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
-    const buscarUsuario =  async () => {
+    const buscarProduto = async () => {
       try {
-        const resposta = await fetch("http://localhost:3000/usuarios");
+        const resposta = await fetch("http://localhost:3000/discos");
         const dados = await resposta.json();
-        setUsuarios(dados);
+        setProdutos(dados);
       } catch {
         alert('Ocorreu um erro no app!');
       }
-    }
-    buscarUsuario();
-  }, [usuarios]);
+    };
+    buscarProduto();
+  }, []);
 
- // id como parâmetr
-  const deletar = async (id,) => {
-    try{
-       await fetch ('http://localhost:3000/usuarios/' + id , {
+  const deletar = async (id) => {
+    try {
+      await fetch(`http://localhost:3000/discos/${id}`, {
         method: 'DELETE',
-       });
+      });
 
-    }catch{
+      setProdutos(produtos.filter(produto => produto.id !== id));
+    } catch {
       alert("Ish lascou!!");
     }
-  }
-  const exportarPDF = () =>{
-     const doc = new jsPDF ();
+  };
 
-     const tabela = usuarios.map( usuario =>[
-      usuario.nome,
-      usuario.email
-     ]);
+  const exportarPDF = () => {
+    const doc = new jsPDF();
 
-     doc.text("Lista de Usuário", 10, 10);
-     doc.autoTable({
-      head:[["Nome", "E-mail"]],
-      body: tabela
-     });
+    const tabela = produtos.map(produto => [
+      produto.titulo,
+      produto.artista,
+      produto.edicao,
+      produto.ano,
+      produto.preco,
+      produto.formato,
+      produto.disponibilidade,
+    ]);
 
-     doc.save("alunosIFMS");
-  }
+    doc.text("Lista de Produtos", 10, 10);
+    doc.autoTable({
+      head: [["Título", "Artista", "Edição", "Ano", "Formato", "Disponibilidade"]],
+      body: tabela,
+    });
+
+    doc.save("ProdutosVinil.pdf");
+  };
 
   return (
     <>
-    <Header/>
+      <Header />
+      <div className={styles.menu}>
+        <Button variant="outlined" onClick={() => exportarPDF()}><PictureAsPdfIcon /> Gerar PDF
+        </Button>
+      </div>
 
-   <div className={styles.menu}>
-     <Button variant="outlined" onClick={() => exportarPDF()}><PictureAsPdfIcon/>Gerar PDF</Button>
-
-    </div>
-      
-
-    <div className={styles.bloco}>
-      <div className={styles.blocao}>
-      
-
-    <table className= {styles.table}>
-      <tr>
-        <th>Nome</th>
-        <th>E-mail</th> 
-        <th>Ações</th>
-      </tr>
-
-      {usuarios.map((usuario) =>
-        <tr key={usuario.id}>
-          <td>{usuario.nome}</td>
-          <td>{usuario.email}</td>
-          <td> <button onClick={() => deletar(usuario.id)} className= {styles.deletar}><DeleteForeverIcon/></button>
-          </td>
-        </tr>
-        
-      )}
-    </table>
-    </div>
-    </div>
+      <div className={styles.bloco}>
+        <div className={styles.blocao}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Artista/Banda</th>
+                <th>Edição</th>
+                <th>Ano</th>
+                <th>Preço</th>
+                <th>Disponibilidade</th>
+                <th>Imagem</th>
+              </tr>
+            </thead>
+            <tbody>
+              {produtos.map((produto) => (
+                <tr key={produto.id}>
+                  <td>{produto.titulo}</td>
+                  <td>{produto.artista}</td>
+                  <td>{produto.edicao}</td>
+                  <td>{produto.ano}</td>
+                  <td>{produto.preco}</td>
+                  <td>{produto.disponibilidade}</td>
+                  <td><img src={produto.image} alt={produto.titulo} width={100} /></td>
+                  <td>
+                    <button onClick={() => deletar(produto.id)} className={styles.deletar}><DeleteForeverIcon />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </>
   );
 }
