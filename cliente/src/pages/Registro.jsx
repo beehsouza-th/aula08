@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import styles from '../styles/registro.module.css';
 
 export default function Registrar() {
   const [titulo, setTitulo] = useState("");
@@ -9,9 +10,11 @@ export default function Registrar() {
   const [preco, setPreco] = useState("");
   const [formato, setFormato] = useState("");
   const [disponibilidade, setDisponibilidade] = useState("");
+  const[imagem, setImagem] = useState("");
 
 
   const navigation = useNavigate();
+
 
   const registrar = async (event) => {
     event.preventDefault();
@@ -30,6 +33,7 @@ export default function Registrar() {
           preco:preco,
           formato:formato,
           disponibilidade : disponibilidade,
+          imagem : imagem
         }),
       });
 
@@ -46,69 +50,59 @@ export default function Registrar() {
   };
 
   return (
-    <main>
-      <h2>Registrar Produto</h2>
+   < main>
+
+      <h2 className= {styles.headerregistro}>Registrar Produto</h2>
+
+      <div className={styles.form}> 
+     
       <form onSubmit={registrar}>
-        <div>
-          <label>Título</label>
-          <input
-            type="text"
-            value={titulo}
-            onChange={(event) => setTitulo(event.target.value)}
-            required
+      
+
+        <div className={styles.container}>
+        
+          <label className={styles.dadosprodutos}>Título</label>
+          <input type="text" value={titulo}  placeholder= "Digite o nome do produto" onChange={(event) => setTitulo(event.target.value)} required
           />
 
-          <label>Artista</label>
-          <input
-            type="text"
-            value={artista}
-            onChange={(event) => setArtista(event.target.value)}
-            required
+          <label className={styles.dadosprodutos}>Artista</label>
+          <input type="text" value={artista} placeholder=" Digite o nome do artista" onChange={(event) => setArtista(event.target.value)} required
           />
 
-          <label>Edição</label>
-          <input
-            type="text"
-            value={edicao}
-            onChange={(event) => setEdicao(event.target.value)}
-            required
+          <label className={styles.dadosprodutos}>Edição</label>
+          <input type="text" value={edicao} placeholder="Digite a edição" onChange={(event) => setEdicao(event.target.value)} required
           />
 
-          <label>Ano</label>
-          <input
-            type="text"
-            value={ano}
-            onChange={(event) => setAno(event.target.value)}
-            required
+          <label className={styles.dadosprodutos}>Ano</label>
+          <input type="text" value={ano} placeholder="Digite o ano" onChange={(event) => setAno(event.target.value)} required
           />
 
-          <label>Preço</label>
-          <input
-            type="text" 
-            value={preco}
-            onChange={(event) => setPreco(event.target.value)}
-            required
+          <label className={styles.dadosprodutos}>Preço</label>
+          <input type="text" value={preco} placeholder="Digite o preço" onChange={(event) => setPreco(event.target.value)} required
           />
 
-          <label>Formato</label>
-          <input
-            type="text"
-            value={formato}
-            onChange={(event) => setFormato(event.target.value)}
-            required
+          <label className={styles.dadosprodutos} >Formato</label>
+          <input type="text" value={formato} placeholder="Digite o formato" onChange={(event) => setFormato(event.target.value)} required
           />
 
-          <label>Disponibilidade</label>
-          <input
-            type="text"
-            value={disponibilidade}
-            onChange={(event) => setDisponibilidade(event.target.value)}
-            required
+          <label className={styles.dadosprodutos}>Disponibilidade</label>
+          <input type="text" value={disponibilidade} placeholder="Diponibilidade" onChange={(event) => setDisponibilidade(event.target.value)} required
           />
+        
+
+        <label className={styles.dadosprodutos}>Imagem</label>
+          <input type="imagem" value={imagem} placeholder ="imagem" onChange={(event) => setImagem(event.target.value)} required
+          />
+
+         <button className={styles.botao}>Registrar</button>
+
         </div>
-
-        <button>Registrar Produto</button>
+      
       </form>
-    </main>
+      </div>
+    </main>       
+            
+
+    
   );
 }

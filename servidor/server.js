@@ -15,7 +15,7 @@ let discos = [
         preco: 250.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        image:'https://m.media-amazon.com/images/I/51NBsBvL2bL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 2,
@@ -26,7 +26,7 @@ let discos = [
         preco: 300.00,
         formato: 'LP',
         disponibilidade: 'Em Estoque',
-        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        image:'https://m.media-amazon.com/images/I/81Q7HZYO1rL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ let discos = [
         preco: 180.00,
         formato: 'LP',
         disponibilidade: 'Esgotado',
-        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        image:'https://m.media-amazon.com/images/I/71XmIyYAkyL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 4,
@@ -48,7 +48,7 @@ let discos = [
         preco: 350.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        image:'https://m.media-amazon.com/images/I/81x364UAGAL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 5,
@@ -59,7 +59,7 @@ let discos = [
         preco: 220.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/71Cf2vPnnWL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 6,
@@ -70,7 +70,7 @@ let discos = [
         preco: 280.00,
         formato: "LP",
         disponibilidade: "Esgotado",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/71rYYgYnr2L._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 7,
@@ -81,7 +81,7 @@ let discos = [
         preco: 200.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/71s6glEqRyL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 8,
@@ -92,7 +92,7 @@ let discos = [
         preco: 190.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/81F3mfg8WnL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 9,
@@ -103,7 +103,7 @@ let discos = [
         preco: 330.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/81ogsUqshzL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 10,
@@ -114,18 +114,18 @@ let discos = [
         preco: 270.00,
         formato: "LP",
         disponibilidade: "Esgotado",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/71HWqbh0BLL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 11,
-        titulo: "The Beatles",
+        titulo: "With the Beatles",
         artista: "The Beatles",
         edicao: "Box Set",
         ano: 1968,
         preco: 500.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/91Nxj5UJZYL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 12,
@@ -136,7 +136,7 @@ let discos = [
         preco: 150.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-          image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+          image:'https://m.media-amazon.com/images/I/71GCkJq7pFL._AC_UL480_FMwebp_QL65_.jpg'
         
     },
     {
@@ -148,7 +148,7 @@ let discos = [
         preco: 260.00,
         formato: "LP",
         disponibilidade: "Esgotado",
-        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        image:'https://m.media-amazon.com/images/I/81twmQBBnQL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 14,
@@ -159,7 +159,7 @@ let discos = [
         preco: 150.00,
         formato: "Vinil",
         disponibilidade: "Em Estoque",
-        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        image:'https://m.media-amazon.com/images/I/81ClwMG6DrL._AC_UL480_FMwebp_QL65_.jpg'
     },
     {
         id: 15,
@@ -170,7 +170,7 @@ let discos = [
         preco: 230.00,
         formato: "LP",
         disponibilidade: "Em Estoque",
-        image:'https://http2.mlstatic.com/D_Q_NP_2X_758086-MLU70076999426_062023-E.webp'
+        image:'https://m.media-amazon.com/images/I/81InYXq1VDL._AC_UL480_FMwebp_QL65_.jpg'
     }
 ];
 

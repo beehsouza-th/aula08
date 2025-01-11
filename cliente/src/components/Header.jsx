@@ -5,20 +5,21 @@ export default function Header(){
     return(
     <>
       <header>
+        <h1> Vinil Records</h1>
             <div className={styles.header}>
-                
-                <h1>vineil</h1>
-               </div>
-
-             <nav className="blocodois">
-
-                <Link to="/registro">
-                    <h2 class='header-link'>Registrar</h2>
+              <div>
+              <nav>
+              <Link to="/home">
+                    <h2 className={styles.menu}>Home</h2>
+                 </Link>
+               
+              <Link to="/registro">
+                    <h2 className={styles.menu}>Registrar</h2>
                  </Link>
 
-
-
-            </nav>
+              </nav>
+              </div>
+           </div>
       </header>
           
     </>

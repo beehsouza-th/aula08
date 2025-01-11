@@ -7,43 +7,13 @@
     letter-spacing: 1px;
 }
 
-th{
-    background-color:#071e5f;
-    color: rgb(234, 234, 234);
-    padding: 12px;
-    text-align: left;
-    font-size: 17px;
-    border-bottom: 2px solid #432187;
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
-    cursor: pointer;
-
-
-}
-
-td{
-    padding:10px;
-    border-bottom:1px solid #8188ba; 
-    font-size: 14px;
-    color:#333,
-}
-
-tr{
-    background-color: #29357c3c;
-}
 
 .deletar{
     border-radius: 8px;
     cursor: pointer;
 }
 
-.menu{
-    background-color: #343c77;
-    width: 100%;
-    height: 10%;
-}
+
 
 .produtos{
     display: flex;
@@ -63,3 +33,36 @@ tr{
     flex-wrap: wrap; 
  
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter Tight", serif;
+}
+
+.header-container{
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header{
+    background-color: rgb(106, 81, 130);
+    width: 100%;
+    padding: 20px;
+}
+
+.menu{
+    width: 50%;
+    color:aliceblue;
+    text-decoration: none;
+    padding-right: 30px;
+    font-size: 20px;
+
+}
+
+

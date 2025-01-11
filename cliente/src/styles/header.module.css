@@ -1,17 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter Tight", serif;
+}
+
+
 header{
-    background-color: rgb(162, 162, 197);
-    color:rgb(255, 255, 255);
+    background-color: rgb(139, 111, 179);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.header {
+.header{
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 100px;
+    margin-top: 50px;
     align-items: center;
+    max-width: 1080px;
+}
+
+.menu{
+    text-decoration: none;
+  color: #ffffff; 
+  font-size: 1rem; 
+  font-family: Arial, sans-serif; 
+  padding: 8px 16px; 
+  transition: color 0.3s ease, transform 0.3s ease; 
+  right:40%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    font-size: 35px;
+    font-style: italic;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+   
 }
 

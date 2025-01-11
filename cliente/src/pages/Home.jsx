@@ -5,6 +5,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import Button from '@mui/material/Button';
 import styles from '../styles/home.module.css';
+
 import Header from "../components/Header";
 
 export default function Home() {
@@ -61,9 +62,10 @@ export default function Home() {
 
 return(
   <>
-  <Header />
 
-  <div className={styles.menu}>
+<Header/>
+  <div>
+ 
     <Button variant="outlined" onClick={() => exportarPDF()}><PictureAsPdfIcon /> Gerar PDF
     </Button>
   </div>
@@ -74,13 +76,13 @@ return(
       <div className={styles.produtos}>
         {produtos.map((produto) => (
           <div key={produto.id}>
+            <img src={produto.image} alt={produto.title} className={styles.prudutosimg} width={100}/>
               <h3>{produto.titulo}</h3>
               <p>Artista: {produto.artista}</p>
               <p>Edição: {produto.edicao}</p>
               <p>Ano: {produto.ano}</p>
               <p>Preço: R${produto.preco}</p>
               <p>Disponibilidade: {produto.disponibilidade}</p>
-              <img src={produto.image} alt={produto.title} className={styles.prudutosimg} width={100}/>
               <button onClick={() => deletar(produto.id)} className={styles.deletar}><DeleteForeverIcon />
                 Remover
               </button>
