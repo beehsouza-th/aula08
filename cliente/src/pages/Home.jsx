@@ -5,7 +5,6 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import Button from '@mui/material/Button';
 import styles from '../styles/home.module.css';
-
 import Header from "../components/Header";
 
 export default function Home() {
@@ -70,10 +69,9 @@ return(
     </Button>
   </div>
 
-  <div className={styles.bloco}>
-    <div className={styles.blocao}>
-      
-      <div className={styles.produtos}>
+  <div className={styles.container}>
+    
+      <div className={styles.card}>
         {produtos.map((produto) => (
           <div key={produto.id}>
             <img src={produto.image} alt={produto.title} className={styles.prudutosimg} width={100}/>
@@ -90,7 +88,7 @@ return(
         ))}
       </div>
     </div>
-  </div>
+  
 </>
 );
 }
