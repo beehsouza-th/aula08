@@ -8,13 +8,17 @@ export default function Header(){
         <h1> Vinil Records</h1>
             <div className={styles.header}>
               <div>
-              <nav>
+              <nav >
               <Link to="/home">
                     <h2 className={styles.menu}>Home</h2>
                  </Link>
                
               <Link to="/registro">
                     <h2 className={styles.menu}>Registrar</h2>
+                 </Link>
+
+                 <Link to="/alterar/:id">
+                    <h2 className={styles.menu}>Alterar</h2>
                  </Link>
 
               </nav>

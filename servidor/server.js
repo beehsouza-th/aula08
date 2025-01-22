@@ -26,7 +26,7 @@ let discos = [
         preco: 300.00,
         formato: 'LP',
         disponibilidade: 'Em Estoque',
-        image:'https://m.media-amazon.com/images/I/81Q7HZYO1rL._AC_UL480_FMwebp_QL65_.jpg'
+        image:'https://www.bing.com/th?id=OPHS.8Usru9oftlHNTw474C474&o=5&pid=21.1&w=136&h=136&qlt=100&dpr=1,3&c=8&pcl=f5f5f5'
     },
     {
         id: 3,
@@ -94,84 +94,8 @@ let discos = [
         disponibilidade: "Em Estoque",
           image:'https://m.media-amazon.com/images/I/81F3mfg8WnL._AC_UL480_FMwebp_QL65_.jpg'
     },
-    {
-        id: 9,
-        titulo: "Thriller",
-        artista: "Michael Jackson",
-        edicao: "Edição Remasterizada",
-        ano: 1982,
-        preco: 330.00,
-        formato: "LP",
-        disponibilidade: "Em Estoque",
-          image:'https://m.media-amazon.com/images/I/81ogsUqshzL._AC_UL480_FMwebp_QL65_.jpg'
-    },
-    {
-        id: 10,
-        titulo: "Rumours",
-        artista: "Fleetwood Mac",
-        edicao: "Edição de Aniversário",
-        ano: 1977,
-        preco: 270.00,
-        formato: "LP",
-        disponibilidade: "Esgotado",
-          image:'https://m.media-amazon.com/images/I/71HWqbh0BLL._AC_UL480_FMwebp_QL65_.jpg'
-    },
-    {
-        id: 11,
-        titulo: "With the Beatles",
-        artista: "The Beatles",
-        edicao: "Box Set",
-        ano: 1968,
-        preco: 500.00,
-        formato: "LP",
-        disponibilidade: "Em Estoque",
-          image:'https://m.media-amazon.com/images/I/91Nxj5UJZYL._AC_UL480_FMwebp_QL65_.jpg'
-    },
-    {
-        id: 12,
-        titulo: "Let It Be",
-        artista: "The Beatles",
-        edicao: "Reedição",
-        ano: 1970,
-        preco: 150.00,
-        formato: "LP",
-        disponibilidade: "Em Estoque",
-          image:'https://m.media-amazon.com/images/I/71GCkJq7pFL._AC_UL480_FMwebp_QL65_.jpg'
-        
-    },
-    {
-        id: 13,
-        titulo: "Purple Rain",
-        artista: "Prince",
-        edicao: "Edição Especial",
-        ano: 1984,
-        preco: 260.00,
-        formato: "LP",
-        disponibilidade: "Esgotado",
-        image:'https://m.media-amazon.com/images/I/81twmQBBnQL._AC_UL480_FMwebp_QL65_.jpg'
-    },
-    {
-        id: 14,
-        titulo: "The Dark Knight",
-        artista: "Hans Zimmer",
-        edicao: "Trilha Sonora Oficial",
-        ano: 2008,
-        preco: 150.00,
-        formato: "Vinil",
-        disponibilidade: "Em Estoque",
-        image:'https://m.media-amazon.com/images/I/81ClwMG6DrL._AC_UL480_FMwebp_QL65_.jpg'
-    },
-    {
-        id: 15,
-        titulo: "What's Going On",
-        artista: "Marvin Gaye",
-        edicao: "Edição de Colecionador",
-        ano: 1971,
-        preco: 230.00,
-        formato: "LP",
-        disponibilidade: "Em Estoque",
-        image:'https://m.media-amazon.com/images/I/81InYXq1VDL._AC_UL480_FMwebp_QL65_.jpg'
-    }
+    
+    
 ];
 
 app.post('/discos', (req, res) => {
@@ -215,7 +139,7 @@ app.get('/discos/:id', (req, res) => {
 
 app.put('/discos/:id', (req, res) => {
     const { id } = req.params;
-    const { titulo, artista, edicao, ano, preco, formato, disponibilidade } = req.body;
+    const { titulo, artista, edicao, ano, preco, formato, disponibilidade, } = req.body;
 
     const disco = discos.find(d => d.id === parseInt(id));
 

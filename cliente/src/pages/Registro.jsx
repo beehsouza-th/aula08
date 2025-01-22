@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from '../styles/registro.module.css';
 
+
 export default function Registrar() {
   const [titulo, setTitulo] = useState("");
   const [artista, setArtista] = useState("");
@@ -10,7 +11,7 @@ export default function Registrar() {
   const [preco, setPreco] = useState("");
   const [formato, setFormato] = useState("");
   const [disponibilidade, setDisponibilidade] = useState("");
-  const[imagem, setImagem] = useState("");
+  const[image, setImage] = useState("");
 
 
   const navigation = useNavigate();
@@ -20,7 +21,7 @@ export default function Registrar() {
     event.preventDefault();
     try {
       
-      const res = await fetch("http://localhost:3000/discos", {
+      const resposta = await fetch("http://localhost:3000/discos/" ,{
         method: "POST",
         headers: {
           "Content-Type": "application/json", 
@@ -33,12 +34,12 @@ export default function Registrar() {
           preco:preco,
           formato:formato,
           disponibilidade : disponibilidade,
-          imagem : imagem
+          image: image
         }),
       });
 
 
-      if (res.ok) {
+      if (resposta.ok) {
         navigation("/");  
       } else {
         alert("Erro ao registrar produto.");
@@ -66,7 +67,7 @@ export default function Registrar() {
           />
 
           <label className={styles.dadosprodutos}>Artista</label>
-          <input type="text" value={artista} placeholder=" Digite o nome do artista" onChange={(event) => setArtista(event.target.value)} required
+          <input type="text" value={artista} placeholder=" Digite o nome do artista" onChange={(event) => setArtista(event.target.value)}required
           />
 
           <label className={styles.dadosprodutos}>Edição</label>
@@ -78,7 +79,7 @@ export default function Registrar() {
           />
 
           <label className={styles.dadosprodutos}>Preço</label>
-          <input type="text" value={preco} placeholder="Digite o preço" onChange={(event) => setPreco(event.target.value)} required
+          <input type="number" value={preco} placeholder="Digite o preço" onChange={(event) => setPreco(event.target.value)}required
           />
 
           <label className={styles.dadosprodutos} >Formato</label>
@@ -91,7 +92,7 @@ export default function Registrar() {
         
 
         <label className={styles.dadosprodutos}>Imagem</label>
-          <input type="imagem" value={imagem} placeholder ="imagem" onChange={(event) => setImagem(event.target.value)} required
+          <input type="url"  id="image" value={image} placeholder ="Link da imagem" onChange={(event) => setImage(event.target.value)} required
           />
 
          <button className={styles.botao}>Registrar</button>
