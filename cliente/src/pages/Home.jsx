@@ -110,7 +110,7 @@ return(
       <Button onClick={ordemPrecoCres}>Ordem preço do menor para o maior</Button>
       <Button  onClick={() => exportarPDF()}><PictureAsPdfIcon /> Gerar PDF</Button>
       </ButtonGroup>
-    </div>
+    </div> 
 
    <div>
       <input className={styles.pesquisar} placeholder="Pesquisar por produto"onChange={(event) => setBuscarproduto(event.target.value)}  // Atualiza o estado da pesquisa. //filtrarProdutos()  e renderizar essa função
